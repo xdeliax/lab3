@@ -120,7 +120,6 @@ void hash_table_v2_destroy(struct hash_table_v2 *hash_table)
 			SLIST_REMOVE_HEAD(list_head, pointers);
 			free(list_entry);
 		}
-		free(hash_table->bucket_mutexes);
 		if (pthread_mutex_destroy(&entry->bucket_mutex) !=0)
 			exit(EXIT_FAILURE);
 	}
